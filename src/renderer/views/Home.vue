@@ -4,13 +4,13 @@
     <el-container>
     <el-aside width="150px" height="100%" class="menu">
       <el-menu default-active="2" class="el-menu-vertical-demo h-100" :router="true">
-        <el-menu-item index="/home/memo"  >
+        <!-- <el-menu-item index="/home/memo"  >
           <i class="el-icon-document"></i>
           <span slot="title">备忘录</span>
-        </el-menu-item>
+        </el-menu-item> -->
         <el-menu-item index="/home/todo">
           <i class="el-icon-s-promotion"></i>
-          <span slot="title">代办</span>
+          <span slot="title">待办事项</span>
         </el-menu-item>
         <el-menu-item index="/home/date">
           <i class="el-icon-date"></i>

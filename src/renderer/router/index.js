@@ -28,11 +28,11 @@ export default new Router({
         name: 'date',
         component: require('@/views/Date').default
       },
-      {
-        path: 'memo',
-        name: 'memo',
-        component: require('@/views/Memo').default
-      },
+      // {
+      //   path: 'memo',
+      //   name: 'memo',
+      //   component: require('@/views/Memo').default
+      // },
       {
         path: 'todo',
         name: 'todo',

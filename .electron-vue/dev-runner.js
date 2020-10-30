@@ -65,15 +65,15 @@ function startRenderer () {
         contentBase: path.join(__dirname, '../'),
         quiet: true,
         proxy: {
-          '/api': {
-            target: 'http://127.0.0.1:7001',
-            // 设置允许跨域
-            changeOrigin: true,
-            // 重写路径
-            pathRewrite: {
-              '^/api': ''
-            }
-          }
+          // '/api-memo': {
+          //   target: 'http://127.0.0.1:7001',
+          //   // 设置允许跨域
+          //   changeOrigin: true,
+          //   // 重写路径
+          //   pathRewrite: {
+          //     '^/api-memo': ''
+          //   }
+          // }
         },
         before (app, ctx) {
           app.use(hotMiddleware)

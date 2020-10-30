@@ -1,9 +1,9 @@
 export default {
-  getBacklogModules: '/api/backlog/modules/query',
-  updateBacklogModule: '/api/backlog/modules/update',
-  updateBacklog: '/api/backlog/update',
-  createBacklog: '/api/backlog/create',
-  deleteBacklog: '/api/backlog/delete',
-  getSchedules: '/api/schedule/query',
-  createSchedule: '/api/schedule/create'
+  getBacklogModules: '/backlog/modules/query',
+  updateBacklogModule: '/backlog/modules/update',
+  updateBacklog: '/backlog/update',
+  createBacklog: '/backlog/create',
+  deleteBacklog: '/backlog/delete',
+  getSchedules: '/schedule/query',
+  createSchedule: '/schedule/create'
 }

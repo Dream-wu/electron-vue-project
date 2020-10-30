@@ -1,6 +1,6 @@
 {
   "name": "electron-vue-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "wumj <532142910@qq.com>",
   "description": "An electron-vue project",
   "license": "",
@@ -22,7 +22,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "electron-vue-project",
+    "productName": "memo",
     "appId": "com.example.yourapp",
     "directories": {
       "output": "build"
@@ -46,10 +46,10 @@
       ]
     },
     "mac": {
-      "icon": "build/icons/icon.icns"
+      "icon": "build/icons/mac.icns"
     },
     "win": {
-      "icon": "build/icons/icon.ico"
+      "icon": "build/icons/window.ico"
     },
     "linux": {
       "icon": "build/icons"

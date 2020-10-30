@@ -25,8 +25,20 @@
 </template>
 
 <script>
+import { remote } from 'electron'
+const { Notification } = remote
 export default {
   name: 'login',
+  mounted () {
+    // 主进程想系统发送通知
+    if (Notification.isSupported()) {
+      let notification = new Notification({
+        title: '🌸',
+        body: 'Have a good day~'
+      })
+      notification.show()
+    }
+  },
   methods: {
     toHome () {
       this.$router.push({ path: '/home' })
