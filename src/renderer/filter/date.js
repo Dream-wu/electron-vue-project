@@ -3,7 +3,7 @@
  *yyyy-MM-dd hh:mm:ss
  */
 export function formatDate (time, fmt) {
-  if (time === undefined || '') {
+  if (time === undefined || time === null || '') {
     return
   }
   if (fmt === undefined || '') {

@@ -21,11 +21,11 @@ const winURL =
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    height: 563,
+    height: 720,
     useContentSize: true,
     // backgroundColor: '#ffff00',
     width: 1000,
-    // frame: false, // 去掉默认的标题栏
+    frame: false, // 去掉默认的标题栏
     webPreferences: {
       webviewTag: true,
       webSecurity: false // 此窗口禁用当前窗口的同源策略

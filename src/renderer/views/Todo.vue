@@ -10,13 +10,17 @@
           <el-button type="text" class="module-card-btn" @click="showBacklogForm(item, 1)"
             ><i class="el-icon-plus"></i
           ></el-button>
-          <el-button class="module-card-btn" type="text"
+          <el-button class="module-card-btn" type="text" @click="goMore(item.id, item.name)"
             ><i class="el-icon-more"></i
           ></el-button>
         </div>
         <div v-for="o in item.items" :key="o.id" class="backlog-item item" @contextmenu.prevent="showMenu(o)">
           <el-checkbox @change="onChange($event, o)" :checked="o.status===2"></el-checkbox>
           <div class="content" @dblclick="showBacklogForm(item, 2, o)">{{o.content}}</div>
+          <div class="backlog-item-date" v-if="o.date" :style="{'color': Date.now()>o.date ? 'red' : '#bbb'}">
+            <!-- <i class="el-icon-message-solid" v-if="o.tip" /> -->
+            {{o.date | formatDate('yyyy-MM-dd')}}
+          </div>
         </div>
       </el-card>
     </div>
@@ -24,6 +28,14 @@
     <el-form :model="backlogForm">
       <el-form-item label="">
         <el-input v-model="backlogForm.content" autocomplete="off" type="textarea" :rows="2"></el-input>
+      </el-form-item>
+      <el-form-item label="到期日期">
+         <el-col :span="11">
+          <el-date-picker size="mini" type="date" placeholder="选择日期" v-model="backlogForm.date" style="width: 100%;" value-format="timestamp"></el-date-picker>
+        </el-col>
+        <el-col :span="8" style="margin-left: 16px;">
+          <el-checkbox  v-model="backlogForm.tip" :true-label="1" :false-label="0">提醒我</el-checkbox>
+        </el-col>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
@@ -48,7 +60,8 @@ export default {
       module: {},
       backlogForm: {
         type: 1,
-        content: ''
+        content: '',
+        tip: 0
       }
     }
   },
@@ -114,7 +127,9 @@ export default {
           this.module = {}
         })
       } else if (this.backlogForm.type === 2) {
-        this.updateData({...this.backlogForm}, true)
+        const data = {...this.backlogForm}
+        delete data.type
+        this.updateData(data, true)
       }
     },
     showMenu (backlog) {
@@ -127,6 +142,10 @@ export default {
         }
       }))
       menu.popup(remote.getCurrentWindow())
+    },
+    goMore (id, name) {
+      console.log('id', id)
+      this.$router.push({path: `/home/todomore/${id}`, query: {name}})
     }
   }
 }
@@ -149,6 +168,14 @@ export default {
   height: 30px;
   line-height: 30px;
   // border-bottom: 1px solid #ddd;
+  .backlog-item-date {
+    display: inline-block;
+    width: 70px;
+    flex-shrink: 0;
+    font-size: 12px;
+    text-align: right;
+  }
+
 }
 .backlog-item .content{
   width: 100%;

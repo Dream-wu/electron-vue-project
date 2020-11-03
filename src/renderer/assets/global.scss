@@ -10,8 +10,12 @@
     background-color: $primary;
     border-color: $primary;
 }
+
 .el-button--text {
     color: $primary;
+}
+.text-danger {
+    color: red;
 }
 
 // .el-checkbox__input.is-checked+.el-checkbox__label {

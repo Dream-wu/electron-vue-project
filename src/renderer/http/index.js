@@ -9,6 +9,10 @@ export const updateBacklogModule = params => {
   return request.post(Path.updateBacklogModule, params)
 }
 
+export const queryBacklog = params => {
+  return request.get(Path.queryBacklog, { params })
+}
+
 export const updateBacklog = params => {
   return request.post(Path.updateBacklog, params)
 }

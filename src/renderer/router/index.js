@@ -9,13 +9,13 @@ Router.prototype.push = function push (location) {
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'landing-page',
+    //   component: require('@/components/LandingPage').default
+    // },
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage').default
-    },
-    {
-      path: '/login',
       name: 'login',
       component: require('@/views/Login').default
     },
@@ -37,6 +37,11 @@ export default new Router({
         path: 'todo',
         name: 'todo',
         component: require('@/views/Todo').default
+      },
+      {
+        path: 'todomore/:id',
+        name: 'todo',
+        component: require('@/views/Todomore').default
       }]
     },
     {

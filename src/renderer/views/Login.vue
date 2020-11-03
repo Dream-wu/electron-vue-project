@@ -1,10 +1,6 @@
 <template>
   <div class="home">
     <div class="top">
-      <div>
-        <router-link to="/" class="alt">返回</router-link>
-      </div>
-
       <div class="top-avatar">
         <el-avatar
           src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
@@ -46,7 +42,16 @@ export default {
   }
 }
 </script>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
+  body { font-family: 'Source Sans Pro', sans-serif; }
+</style>
 <style lang="scss" scoped>
 .home {
   overflow-x: hidden;
