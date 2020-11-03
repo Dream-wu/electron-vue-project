@@ -1,6 +1,7 @@
 # electron-vue-project
 
 > An electron-vue project
+基于【electron-vue】做的【桌面端】demo项目
 
 #### Build Setup
 
@@ -15,7 +16,8 @@ npm run dev
 npm run build
 
 ```
-### 接口
-日程 
-  新增、删除、查询
+### 项目预览
+ ![Image text](./login.png)
+ ![Image text](./1.png)
+ ![Image text](./2.png)
 
